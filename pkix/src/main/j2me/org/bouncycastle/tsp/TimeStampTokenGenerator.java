@@ -82,6 +82,7 @@ public class TimeStampTokenGenerator
     int accuracyMicros = -1;
 
     boolean ordering = false;
+    boolean includeOrdering = false;
 
     GeneralName tsa = null;
     
@@ -229,6 +230,11 @@ public class TimeStampTokenGenerator
     public void setOrdering(boolean ordering)
     {
         this.ordering = ordering;
+    }
+    
+    public void setIncludeOrdering(boolean includeOrdering)
+    {
+        this.includeOrdering = includeOrdering;
     }
 
     public void setTSA(GeneralName tsa)

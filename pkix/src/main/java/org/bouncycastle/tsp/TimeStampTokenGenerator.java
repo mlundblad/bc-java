@@ -103,6 +103,7 @@ public class TimeStampTokenGenerator
     int accuracyMicros = -1;
 
     boolean ordering = false;
+    boolean includeOrdering = false;
 
     GeneralName tsa = null;
     
@@ -460,6 +461,11 @@ public class TimeStampTokenGenerator
     {
         this.ordering = ordering;
     }
+    
+    public void setIncludeOrdering(boolean includeOrdering)
+    {
+        this.includeOrdering = includeOrdering;
+    }
 
     public void setTSA(GeneralName tsa)
     {
@@ -544,11 +550,11 @@ public class TimeStampTokenGenerator
         }
 
         ASN1Boolean derOrdering = null;
-        if (ordering)
+        if (ordering || includeOrdering)
         {
             derOrdering = new ASN1Boolean(ordering);
-        }
 
+        }
         ASN1Integer  nonce = null;
         if (request.getNonce() != null)
         {

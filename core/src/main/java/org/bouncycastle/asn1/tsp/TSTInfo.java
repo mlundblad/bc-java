@@ -208,7 +208,7 @@ public class TSTInfo
             seq.add(accuracy);
         }
         
-        if (ordering != null && ordering.isTrue())
+        if (ordering != null)
         {
             seq.add(ordering);
         }
