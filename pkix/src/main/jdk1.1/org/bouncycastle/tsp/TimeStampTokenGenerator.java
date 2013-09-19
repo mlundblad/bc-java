@@ -390,7 +390,7 @@ public class TimeStampTokenGenerator
         }
 
         ASN1Boolean derOrdering = null;
-        if (ordering)
+        if (ordering || includeOrdering)
         {
             derOrdering = new ASN1Boolean(ordering);
         }
